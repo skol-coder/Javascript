@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: rgba(0, 0, 255, 0.685);
+        }
+        h1{
+            text-align: center;
+            background-color: rgb(255, 153, 0);
+            border-radius: 20px;
+        }
+        form{
+            text-align: center;
+            background-color: rgb(255, 117, 117);
+            border-radius: 20px;  
+        }
+    </style>
+    <title>Form validation</title>
+</head>
+<body>
+    <h1>Form</h1>
+    <form name ="form" onsubmit="return validate()">
+        <br>
+        <h3 style="color: rgb(17, 0, 255);">Fields marked by * are required</h3>
+        <label>Enter name: *</label>
+        <input type="text" name="name" size="30" required><br><br>
+        <label>Date of birth: </label>
+        <input type="date" name="dob"><br><br>
+        <label>Enter email: *</label>
+        <input type="email" name="email" size="30" required><br><br>
+        <label>Enter phone number: </label>
+        <input type="tel" name="phno" size="25"><br><br>
+        <label>Select gender: </label>
+        <input type="radio" name="gender" value="Male">
+        <label>Male</label>
+        <input type="radio" name="gender" value="Female">
+        <label>Female</label>
+        <br><br>
+        <input type="submit" name="submit">&nbsp;
+        <input type="reset">
+        <br><br>
+    </form>
+    <div id="context"> 
+        <p id="dname"> </p>
+        <p id="dphno"> </p>
+        <p id="ddob"></p>
+        <p id="demail"> </p>
+        <p id="dgender"> </p>
+    </div>
+    
+</body>
+<script>
+    function validate(){
+        var name = document.forms['form']["name"].value;
+        var dob = document.forms['form']["dob"].value;
+        var email = document.forms['form']["email"].value;
+        var phno = document.forms['form']["phno"].value;
+        var gender = document.forms['form']["gender"].value;
+
+        if(name===" "||name==null){
+            console.log(name);
+            return false;
+        }
+        if(phno===" "||phno==null){
+            console.log(phno);
+            return false;
+        }
+        console.log(name);
+        console.log(phno);
+        console.log(dob);  
+        console.log(email); 
+        console.log(gender);     
+        return true;
+    }      
+</script>
+</html>
